@@ -1,0 +1,21 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "this is react tutorial",
+  "keywords": [
+    "react"
+  ],
+  "license": "ISC",
+  "author": "prayash",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "parcel": "^2.15.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
