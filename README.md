@@ -1,17 +1,20 @@
-# NAMASTE-REACT
-React Tutorial
-## Namaste React Course 
+## Namaste React Course by Akshay Saini
 
-## Coding :
+# Episode 04 - Talk is Cheap, show me the code!
 
-In your existing project
+## Coding Assignment:
 
-- initialize `npm` into your repo
-- install `react and `react-dom`
-- remove CDN links of react
-- install parcel
-- ignite your app with `parcel`
-- add script for "start" and "build" with parcel commands
-- add `.gitignore` file
-- add `browserlists`
-- build a production version of your code using `parcel build`
+- Build a `Food Ordering App`
+  - Think of a `cool name` for your app
+  - Build an `AppLayout`
+  - Build a `Header Component` with Logo & Nav Items & Cart
+  - Build a `Body Component`
+    - Build `RestaurantList Component`
+    - Build `RestaurantCard Component`
+      - Use `static data initially`
+      - Make your `card dynamic`(pass in props)
+        - `Props` - passing arguments to a function - Use Destructuring & Spread operator
+      - `Render` your cards with dynamic data of restaurants
+      - Use `Array.map` to render all the restaurants
+
+## [😋 Food App Basic Layout 😍](https://food-app-basic-layout.netlify.app/)
