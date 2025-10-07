@@ -23,7 +23,7 @@ const Header = () => {
     <div className="header">
       <div className="logo-container">
         <img
-          src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Dzomato&psig=AOvVaw1akc7cv9IlhcQWzFzwqsOO&ust=1759173109751000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJj_7dOU_I8DFQAAAAAdAAAAABAE"
+          src="https://png.pngtree.com/png-vector/20230217/ourmid/pngtree-food-logo-design-for-restaurant-and-business-png-image_6604922.png"
           alt="App Logo"
           className="logo"
         />
