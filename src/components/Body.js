@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import RestaurantCard from './RestaurantCard';
-import Shimmer from './Shimmer';
-import { Link } from 'react-router-dom';
-import useOnlineStatus from '../utils/useOnlineStatus';
+import { useEffect, useState } from "react";
+import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
+import { Link } from "react-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // * React Hook -> A normal JavaScript function which is given to us by React (or) Normal JS utility functions
@@ -13,7 +13,7 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
 
   // * Whenever a state variable updates or changes, react triggers a reconciliation cycle(re-renders the component)
   // console.log('Body rendered');
@@ -24,7 +24,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING'
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -40,7 +40,7 @@ const Body = () => {
 
   if (onlineStatus === false)
     return (
-      <h1 style={{ textAlign: 'center', marginTop: '100px' }}>
+      <h1 style={{ textAlign: "center", marginTop: "100px" }}>
         Looks like you're offline! Please check your internet connection
       </h1>
     );
@@ -53,18 +53,19 @@ const Body = () => {
         <input type="text" placeholder="Search Food or Restaurant" />
         <button>Search</button>
       </div> */}
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
             placeholder="Search a restaurant you want..."
-            className="searchBox"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               // * Filter the restaurant cards and update the UI
               // * searchText
@@ -80,32 +81,35 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            // * Filter logic
-            const filteredList = listOfRestaurants.filter(
-              (res) => parseFloat(res.data.avgRating) > 4
-            );
 
-            setFilteredRestaurant(filteredList);
-            console.log(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="search m-4 p-4 flex items-center rounded-lg">
+          <button
+            className="px-4 py-2 bg-gray-100"
+            onClick={() => {
+              // * Filter logic
+              const filteredList = listOfRestaurants.filter(
+                (res) => parseFloat(res.data.avgRating) > 4
+              );
+
+              setFilteredRestaurant(filteredList);
+              console.log(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex wrap">
         {/* // * looping through the <RestaurentCard /> components Using Array.map() method */}
 
         {filteredRestaurant.map((restaurant) => (
           <Link
             style={{
-              textDecoration: 'none',
-              color: '#000',
+              textDecoration: "none",
+              color: "#000",
             }}
             key={restaurant.data.id}
-            to={'/restaurants/' + restaurant.data.id}
+            to={"/restaurants/" + restaurant.data.id}
           >
             <RestaurantCard resData={restaurant} />
           </Link>
