@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Header = () => {
@@ -18,30 +18,30 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div className="nav-items">
+      <div className="flex items-center">
         <ul>
-          <li>Online Status: {onlineStatus ? '✅' : '⛔'}</li>
+          <li className='px-4'>Online Status: {onlineStatus ? '✅' : '⛔'}</li>
           <li>
             <Link to="/" className="links">
               Home
             </Link>
           </li>
-          <li>
+          <li className='px-4'>
             <Link to="/about" className="links">
               About Us
             </Link>
           </li>
-          <li>
+          <li className='px-4'>
             <Link to="/contact" className="links">
               Contact Us
             </Link>
           </li>
-          <li>
+          <li className='px-4'>
             <Link to="/grocery" className="links">
               Grocery
             </Link>
           </li>
-          <li>
+          <li className='px-4'>
             <Link className="links">Cart</Link>
           </li>
           <button
