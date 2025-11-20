@@ -1,10 +1,10 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-dom';
 // import Shimmer from './Shimmer';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
 import ShimmerMenu from './ShimmerMenu';
 import { CDN_URL } from '../utils/constants';
-import { FiClock } from 'react-icons/fi';
-import { AiOutlineStar } from 'react-icons/ai';
+// import { FiClock } from 'react-icons/fi';
+// import { AiOutlineStar } from 'react-icons/ai';
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
