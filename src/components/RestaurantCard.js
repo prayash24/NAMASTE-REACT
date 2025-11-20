@@ -1,6 +1,6 @@
 import { CDN_URL } from '../utils/constants';
-import { FiClock } from 'react-icons/fi';
-import { AiOutlineStar } from 'react-icons/ai';
+// import { FiClock } from 'react-icons/fi';
+// import { AiOutlineStar } from 'react-icons/ai';
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -15,10 +15,10 @@ const RestaurantCard = (props) => {
   } = resData?.data;
 
   return (
-    <div className="res-card">
+    <div className="m-4 p-4 w-[250px] rounded-lg">
       <div className="res-img">
         <img
-          className="res-logo"
+          className="rounded-lg"
           src={CDN_URL + cloudinaryImageId}
           alt="Biryani"
         />
